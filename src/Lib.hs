@@ -397,7 +397,7 @@ writeGameInfo nPlayers nGames =
             (writeInfo (folderName i) info)
             (writeGlobalInfo (folderName i)
                 (originalPlayers, originalCardsOnTable) (players, cardsOnTable))) [1..nGames]
-    where folderName = (\i -> "一夜狼人杀/游戏" ++ (show i))
+    where folderName = (\i -> "一夜狼人杀（" ++ (show nPlayers) ++ "）人局/游戏" ++ (show i))
 
 
 someFunc :: IO ()
