@@ -77,11 +77,24 @@ getAllRoles numOfPlayers = case numOfPlayers of
     4 -> [Werewolf, Villager, Seer, Minion, Drunk, Troublemaker, Robber]
     5 -> [Werewolf] ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber]
     6 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber]
-    7 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber, Insomniac]
-    8 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber] ++ (replicate 2 Mason)
+    7 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber, Doppelganger]
+    8 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber] ++ [Insomniac, Doppelganger]
     9 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber] ++ (replicate 2 Mason) ++ [Doppelganger]
     10 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber, Insomniac] 
         ++ (replicate 2 Mason) ++ [Doppelganger]
+
+
+-- getAllRoles :: Int -> [Role]
+-- getAllRoles numOfPlayers = case numOfPlayers of
+--     3 -> [Werewolf, Villager, Seer, Minion, Drunk, Robber]
+--     4 -> [Werewolf, Villager, Seer, Minion, Drunk, Troublemaker, Robber]
+--     5 -> [Werewolf] ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber]
+--     6 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber]
+--     7 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber, Insomniac]
+--     8 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber] ++ (replicate 2 Mason)
+--     9 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber] ++ (replicate 2 Mason) ++ [Doppelganger]
+--     10 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber, Insomniac] 
+--         ++ (replicate 2 Mason) ++ [Doppelganger]
 
 
 findAll :: Eq a => [a] -> a -> [Int]
