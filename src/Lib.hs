@@ -392,7 +392,7 @@ writeGlobalInfo directoryPath (originalPlayers, originalCardsOnTable) (players, 
             (map (\item -> case item of
                 (playerId, _) -> "玩家 " ++ (show playerId))
             (filter (\item -> case item of
-                (playerId, player) -> player == Werewolf) (zip [0..] originalPlayers))))
+                (playerId, player) -> player == Werewolf) (zip [0..] players))))
         in
             writeFile
                 (directoryPath ++ "/游戏信息（游戏结束前请勿打开）.txt")
