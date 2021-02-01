@@ -71,6 +71,7 @@ instance Show Role where
     show Tanner = "皮匠"
     show Villager = "村民"
 
+
 getAllRoles :: Int -> [Role]
 getAllRoles numOfPlayers = case numOfPlayers of
     3 -> [Werewolf, Villager, Seer, Minion, Drunk, Robber]
@@ -83,8 +84,9 @@ getAllRoles numOfPlayers = case numOfPlayers of
     10 -> (replicate 2 Werewolf) ++ (replicate 2 Villager) ++ [Seer, Minion, Drunk, Troublemaker, Robber, Insomniac] 
         ++ (replicate 2 Mason) ++ [Doppelganger]
 
+
 findAll :: Eq a => [a] -> a -> [Int]
-findAll items element = map (\item -> case item of (index, item ) -> index)
+findAll items element = map (\item -> case item of (index, item) -> index)
     (filter
     (\item -> case item of (index, item) -> item == element)
     (zip[0..] items))
