@@ -6,7 +6,6 @@ module Lib
     ) where
 
 
-import GHC.IO.Encoding
 import Data.Map (Map)
 import qualified Data.Map as Map
 
@@ -404,7 +403,6 @@ writeGlobalInfo directoryPath (originalPlayers, originalCardsOnTable) (players, 
 writeGameInfo :: Int -> Int -> IO [()]
 writeGameInfo nPlayers nGames =
     mapM (\i -> do
-            setLocaleEncoding utf8
             (originalPlayers, originalCardsOnTable) <- (allocateRoles nPlayers)
             (players, cardsOnTable, info) <- (nightActions originalPlayers originalCardsOnTable)
             (createDirectoryIfMissing True (folderName i))
@@ -420,7 +418,6 @@ generateEverything = (mapM (\i -> (writeGameInfo i 50)) [6..10])
 
 someFunc :: IO ()
 someFunc = do
-    setLocaleEncoding utf8
     setStdGen (mkStdGen 56)
     (originalPlayers, originalCardsOnTable) <- (allocateRoles 8)
     

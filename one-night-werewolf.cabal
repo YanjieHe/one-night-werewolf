@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 365c4f6e1b67d9f2256ef9408811c1b274fdd14c543457ef748c4f2ac4b7023f
+-- hash: 1ee924fcb1be13d79325f1e851e4b00876d7f8948e1d61dc3eb936977f3a9234
 
 name:           one-night-werewolf
 version:        0.1.0.0
@@ -33,7 +33,10 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5, random, containers, directory
+      base >=4.7 && <5
+    , containers
+    , directory
+    , random
   default-language: Haskell2010
 
 executable one-night-werewolf-exe
@@ -45,7 +48,10 @@ executable one-night-werewolf-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , directory
     , one-night-werewolf
+    , random
   default-language: Haskell2010
 
 test-suite one-night-werewolf-test
@@ -58,5 +64,8 @@ test-suite one-night-werewolf-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , directory
     , one-night-werewolf
+    , random
   default-language: Haskell2010
